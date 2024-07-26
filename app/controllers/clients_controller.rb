@@ -4,6 +4,10 @@ class ClientsController < ApplicationController
     @clients = Client.all
   end
 
+  def show
+    @client = Client.find(params[:id])
+  end
+
   def new
     @client = Client.new
   end
@@ -15,6 +19,25 @@ class ClientsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @client = Client.find(params[:id])
+  end
+
+  def update
+    @client = Client.find(params[:id])
+    if @client.update(client_params)
+      redirect_to clients_path, notice: 'Client was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @client = Client.find(params[:id])
+    @client.destroy
+    redirect_to clients_path, notice: 'Client was successfully destroyed.'
   end
 
   private

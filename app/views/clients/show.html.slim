@@ -1,0 +1,13 @@
+div
+  h2 Detalle del cliente
+
+div
+  ul
+    li = @client.name
+    li = @client.surname
+    li = @client.age
+    li = @client.email
+    li = @client.created_at
+    li = @client.updated_at
+div
+  button = link_to "Volver", "/clients"

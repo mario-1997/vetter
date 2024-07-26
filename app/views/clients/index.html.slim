@@ -1,26 +1,21 @@
 div
   - if @clients.any?
+    h1 Listado de clientes
     div
       table
         tr
           th Nombre
           th Apellidos
-          th Edad
-          th Correo electronico
-          th Fecha de alta
           th Acciones
 
         - @clients.each do |client|
           tr
             td = client.name
             td = client.surname
-            td = client.age
-            td = client.email
-            td = client.created_at
             td
+              button = link_to "Detalle", "clients/#{client.id}"
               button = link_to "Editar", "clients/#{client.id}/edit"
-
-
+              button = link_to "Eliminar", "clients/#{client.id}", data: {turbo_method: "delete", turbo_confirm: "Are you sure?" }
     div
       button = link_to "Añadir cliente", "clients/new"
   - else

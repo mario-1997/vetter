@@ -94,13 +94,17 @@
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.3.2, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.23.0, RVM: ruby-3.2.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simple_form (v5.3.1, RVM: ruby-3.2.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="slim (v5.2.1, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.5.1, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.7.3, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.3, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.1, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="strscan (v3.1.0, RVM: ruby-3.2.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="temple (v0.10.3, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.1, RVM: ruby-3.2.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.4.0, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.1, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v2.0.6, RVM: ruby-3.2.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, RVM: ruby-3.2.4) [gem]" level="application" />
@@ -137,6 +141,7 @@
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="simple_form:install" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
@@ -167,6 +172,7 @@
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="simple_form:install" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />

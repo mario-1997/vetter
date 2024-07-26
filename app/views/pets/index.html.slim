@@ -1,0 +1,20 @@
+div
+  h1 Listado de mascotas
+
+-if @pets.any?
+  div
+    table
+      tr
+        th Nombre
+        th Dueño
+        th Acciones
+      - @pets.each do |pet|
+        tr
+          td = pet.name
+          td = pet.client_id
+          td = link_to "detalles", "pets/#{pet.id}"
+
+  div
+    button = link_to "Añadir mascota", "pets/new"
+-else
+  p No hay mascotas dadas de alta

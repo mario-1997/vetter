@@ -1,0 +1,15 @@
+div
+  h2 Detalle de #{@pet.name}
+
+div
+  ul
+    li Nombre: #{@pet.name}
+    li Tipo: #{@pet.animal_type}
+    li Raza: #{@pet.breed}
+    li Edad: #{@pet.age}
+    li Numero de chip: #{@pet.chip_number}
+    li Alta: #{@pet.created_at}
+    li Ultima edicion: #{@pet.updated_at}
+    li Id de dueño: #{@pet.client_id}
+div
+  button = link_to "Volver", "/pets"

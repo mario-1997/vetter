@@ -3,11 +3,11 @@ div
 
 div
   ul
-    li = @client.name
-    li = @client.surname
-    li = @client.age
-    li = @client.email
-    li = @client.created_at
-    li = @client.updated_at
+    li Nombre: #{@client.name}
+    li Apellidos: #{@client.surname}
+    li Edad: #{@client.age}
+    li Email: #{@client.email}
+    li Alta: #{@client.created_at}
+    li Ultima edicion: #{@client.updated_at}
 div
   button = link_to "Volver", "/clients"

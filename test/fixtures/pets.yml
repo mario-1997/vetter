@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  animal_type: MyString
+  breed: MyString
+  age: 1
+  chip_number: 1
+
+two:
+  name: MyString
+  animal_type: MyString
+  breed: MyString
+  age: 1
+  chip_number: 1

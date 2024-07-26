@@ -1,0 +1,8 @@
+=simple_form_for @pet do |f|
+  =f.input :name
+  =f.input :animal_type
+  =f.input :breed
+  =f.input :age
+  =f.input :chip_number
+  =f.collection_select :client_id, Client.all, :id, :name
+  =f.submit 'Guardar mascota'

@@ -1,0 +1,19 @@
+- if @treatments.any?
+  h2 Listado de tratamientos
+  div
+    table
+      tr
+        th tratamiento
+        th Precio
+        th Acciones
+      - @treatments.each do |treatment|
+        tr
+          td = treatment.name
+          td = treatment.price
+          td
+            button = link_to "editar", edit_treatment_path(treatment.id)
+- else
+  p No hay Tratamientos todavia
+
+div
+  button = link_to "Añadir tratamiento", new_treatment_path

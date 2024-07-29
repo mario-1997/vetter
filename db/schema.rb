@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_29_090406) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_29_163220) do
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -32,6 +32,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_090406) do
     t.index ["client_id"], name: "index_pets_on_client_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -40,6 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_090406) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

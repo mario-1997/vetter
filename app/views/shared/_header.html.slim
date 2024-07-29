@@ -1,0 +1,10 @@
+- if user_signed_in?
+  div
+    header
+      ul
+        li = link_to "Clientes", clients_path
+        li = link_to "Mascotas", pets_path
+
+    div
+      = current_user.email if current_user
+      button = link_to "Cerrar sesion", destroy_user_session_path, data: {turbo_method: "delete", turbo_confirm: "Vas a cerrar sesion"}

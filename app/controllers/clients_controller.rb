@@ -37,8 +37,12 @@ class ClientsController < ApplicationController
 
   def destroy
     @client = Client.find(params[:id])
-    @client.destroy
-    redirect_to clients_path, notice: 'Client was successfully destroyed.'
+    if @client.pets.count > 0
+      redirect_to clients_path, notice: 'Tienes mascotas asociadas'
+    else
+      @client.destroy
+      redirect_to clients_path
+    end
   end
 
   private

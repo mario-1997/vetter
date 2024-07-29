@@ -13,11 +13,11 @@ div
           td = pet.name
           td = pet.client.name
           td
-            button = link_to "Detalle", "pets/#{pet.id}"
-            button = link_to "Editar", "pets/#{pet.id}/edit"
-            button = link_to "Eliminar", "pets/#{pet.id}", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" }
+            button = link_to "Detalle", pet_path(pet.id)
+            button = link_to "Editar", edit_pet_path(pet.id)
+            button = link_to "Eliminar", pet_path(pet.id), data: { turbo_method: "delete", turbo_confirm: "Are you sure?" }
 
   div
-    button = link_to "Añadir mascota", "pets/new"
+    button = link_to "Añadir mascota", new_pet_path
 -else
   p No hay mascotas dadas de alta

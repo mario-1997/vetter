@@ -15,11 +15,11 @@ div
             td = client.surname
             td = client.pets.count
             td
-              button = link_to "Detalle", "clients/#{client.id}"
-              button = link_to "Editar", "clients/#{client.id}/edit"
-              button = link_to "Eliminar", "clients/#{client.id}", data: {turbo_method: "delete", turbo_confirm: "Are you sure?" }
+              button = link_to "Detalle", client_path(client.id)
+              button = link_to "Editar", edit_client_path(client.id)
+              button = link_to "Eliminar", client_path(client.id), data: {turbo_method: "delete", turbo_confirm: "Are you sure?" }
     div
-      button = link_to "Añadir cliente", "clients/new"
+      button = link_to "Añadir cliente", new_client_path
   - else
     p No hay clientes dados de alta
 

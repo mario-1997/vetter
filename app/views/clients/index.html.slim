@@ -6,12 +6,14 @@ div
         tr
           th Nombre
           th Apellidos
+          th Mascotas
           th Acciones
 
         - @clients.each do |client|
           tr
             td = client.name
             td = client.surname
+            td = client.pets.count
             td
               button = link_to "Detalle", "clients/#{client.id}"
               button = link_to "Editar", "clients/#{client.id}/edit"

@@ -11,8 +11,11 @@ div
       - @pets.each do |pet|
         tr
           td = pet.name
-          td = pet.client_id
-          td = link_to "detalles", "pets/#{pet.id}"
+          td = pet.client.name
+          td
+            button = link_to "Detalle", "pets/#{pet.id}"
+            button = link_to "Editar", "pets/#{pet.id}/edit"
+            button = link_to "Eliminar", "pets/#{pet.id}", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" }
 
   div
     button = link_to "Añadir mascota", "pets/new"

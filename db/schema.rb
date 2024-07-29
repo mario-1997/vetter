@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_090406) do
     t.index ["client_id"], name: "index_pets_on_client_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users_list", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

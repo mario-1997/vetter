@@ -1,0 +1,15 @@
+div
+  table
+    tr
+      th Email
+      th Rol
+      th Status
+
+    - @users_list.each do |user_list|
+      tr
+        td = user_list.email
+        td -
+        td = image_tag('online.svg')
+
+
+

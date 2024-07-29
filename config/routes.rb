@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :clients
   resources :pets
+  resources :users_list, only: :index
 
   # Defines the root path route ("/")
   # root "posts#index"

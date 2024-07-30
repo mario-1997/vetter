@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :clients
   resources :pets
   resources :treatments, except: [:show, :destroy]
+  resources :treatment_pets, except: [:show, :destroy]
 
   # Defines the root path route ("/")
   # root "posts#index"

@@ -1,0 +1,4 @@
+=simple_form_for @treatment_pet do |f|
+  div =f.collection_select :pet_id, Pet.all, :id, :name
+  div =f.collection_select :treatment_id, Treatment.all, :id, :name
+  div =f.submit 'Aplicar tratamiento'

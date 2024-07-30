@@ -1,0 +1,21 @@
+div
+  h2 Tratamientos aplicados
+
+-if @treatment_pets.any?
+  div
+    table
+      tr
+        th Mascota
+        th Tratamiento aplicado
+        th Fecha de tratamiento
+      - @treatment_pets.each do |treatment_pet|
+        tr
+          td = treatment_pet.pet.name
+          td = treatment_pet.treatment.name
+          td = treatment_pet.created_at
+    button = link_to "Crear tratamiento", new_treatment_pet_path
+
+
+-else
+  p No hay tratamientos aplicados
+

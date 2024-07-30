@@ -4,5 +4,6 @@
   =f.input :breed
   =f.input :age
   =f.input :chip_number
-  =f.collection_select :client_id, Client.all, :id, :name
-  =f.submit 'Guardar mascota'
+  =f.collection_select :client_id, Client.all, :id, :name, include_blank: 'Seleccione', select: @pet.client_id
+  div
+    =f.submit 'Guardar mascota'

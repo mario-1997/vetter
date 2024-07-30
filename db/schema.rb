@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_29_163220) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_30_080833) do
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -38,6 +38,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_163220) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "treatment_pets", force: :cascade do |t|
+    t.integer "pet_id", null: false
+    t.integer "treatment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_treatment_pets_on_pet_id"
+    t.index ["treatment_id"], name: "index_treatment_pets_on_treatment_id"
+  end
+
   create_table "treatments", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -59,4 +68,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_163220) do
   end
 
   add_foreign_key "pets", "clients"
+  add_foreign_key "treatment_pets", "pets"
+  add_foreign_key "treatment_pets", "treatments"
 end

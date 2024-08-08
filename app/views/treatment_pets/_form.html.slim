@@ -1,4 +1,6 @@
-=simple_form_for @treatment_pet do |f|
-  div =f.collection_select :pet_id, Pet.all, :id, :name
-  div =f.collection_select :treatment_id, Treatment.all, :id, :name
-  div =f.submit 'Aplicar tratamiento'
+=simple_form_for @treatment_pet, defaults: { input_html: { class: 'rounded flex flex-col mt-2' }, label_html:{class:"hidden"} } do |f|
+  =f.input :pet_id, collection: Pet.all
+  =f.input :treatment_id, collection: Treatment.all
+
+  div.flex.justify-center
+    =f.submit 'Aplicar tratamiento', class:"rounded p-1 mt-3 hover:bg-gray-300"

@@ -1,0 +1,17 @@
+{
+  "name": "vet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/mario-1997/vetter"
+  },
+  "private": true,
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2"
+  }
+}

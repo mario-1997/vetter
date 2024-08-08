@@ -1,13 +1,29 @@
-div
-  h2 Detalle del cliente
+div.bg-gray-100.p-5
+  div
+    h2.mb-2.underline Detalle del cliente
 
-div
-  ul
-    li Nombre: #{@client.name}
-    li Apellidos: #{@client.surname}
-    li Edad: #{@client.age}
-    li Email: #{@client.email}
-    li Alta: #{@client.created_at}
-    li Ultima edicion: #{@client.updated_at}
-div
-  button = link_to "Volver", "/clients"
+  div
+    div.pb-2
+      p.font-bold Nombre:
+      p.text-slate-400 = @client.name
+    div.pb-2
+      p.font-bold Apellidos:
+      p.text-slate-400 = @client.surname
+    div.pb-2
+      p.font-bold DNI:
+      p.text-slate-400 = @client.dni
+    div.pb-2
+      p.font-bold Edad:
+      p.text-slate-400 = @client.age
+    div.pb-2
+      p.font-bold Correo:
+      p.text-slate-400 = @client.email
+    div.pb-2
+      p.font-bold Alta
+      p.text-slate-400 = @client.created_at
+    div.pb-2
+      p.font-bold Última modificación:
+      p.text-slate-400 = @client.updated_at
+
+  div
+    button.rounded.p-1.mt-3.hover:bg-gray-300 = link_to "Volver", "/clients"

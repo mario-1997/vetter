@@ -41,13 +41,13 @@ class ClientsController < ApplicationController
       redirect_to clients_path, notice: 'Tienes mascotas asociadas'
     else
       @client.destroy
-      redirect_to clients_path
+      redirect_to clients_path, notice: 'Cliente borrado'
     end
   end
 
   private
   def client_params
-    params.require(:client).permit(:name, :surname, :age, :email)
+    params.require(:client).permit(:name, :surname, :age, :email, :dni)
   end
 
 

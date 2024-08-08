@@ -1,6 +1,9 @@
-=simple_form_for @client do |f|
-  =f.input :name
-  =f.input :surname
-  =f.input :age
-  =f.input :email
-  =f.submit 'Guardar cliente'
+=simple_form_for @client, defaults: { input_html: { class: 'rounded flex flex-col mt-2' }, label_html:{class:"hidden"} } do |f|
+  =f.input :name, placeholder: "Nombre"
+  =f.input :surname, placeholder: "Apellidos"
+  =f.input :dni, placeholder: "DNI"
+  =f.input :age, placeholder: "Edad"
+  =f.input :email, placeholder: "Email"
+
+  div.flex.justify-center
+    =f.submit 'Guardar cliente', class:"rounded p-1 mt-3 hover:bg-gray-300"

@@ -1,21 +1,19 @@
-div
-  h2 Tratamientos aplicados
-
--if @treatment_pets.any?
-  div
-    table
-      tr
-        th Mascota
-        th Tratamiento aplicado
-        th Fecha de tratamiento
-      - @treatment_pets.each do |treatment_pet|
+div.flex.justify-center.flex-col.items-center.bg-gray-100.p-5
+  - if @treatment_pets.any?
+    div
+      table.border-collapse.border.border-slate-400.text-center
+        caption Tratamientos aplicados
         tr
-          td = treatment_pet.pet.name
-          td = treatment_pet.treatment.name
-          td = treatment_pet.created_at
-    button = link_to "Crear tratamiento", new_treatment_pet_path
-
-
--else
-  p No hay tratamientos aplicados
+          th.border.border-slate-300 Mascota
+          th.border.border-slate-300 Tratamiento aplicado
+          th.border.border-slate-300 Fecha de tratamiento
+        - @treatment_pets.each do |treatment_pet|
+          tr
+            td.border.border-slate-300 = treatment_pet.pet.name
+            td.border.border-slate-300 = treatment_pet.treatment.name
+            td.border.border-slate-300 = treatment_pet.created_at
+  - else
+    p No hay tratamientos aplicados
+  div
+    button.rounded.p-1.mt-3.hover:bg-gray-300 = link_to "Aplicar tratamiento", new_treatment_pet_path
 

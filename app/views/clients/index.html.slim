@@ -1,27 +1,26 @@
-div
+div.flex.justify-center.flex-col.items-center.bg-gray-100.p-5
   - if @clients.any?
-    h1 Listado de clientes
     div
-      table
+      table.border-collapse.border.border-slate-400.text-center
+        caption Listado de Clientes
         tr
-          th Nombre
-          th Apellidos
-          th Mascotas
-          th Acciones
-
+          th.border.border-slate-300 Nombre
+          th.border.border-slate-300 Apellidos
+          th.border.border-slate-300 Mascotas
+          th.border.border-slate-300 Acciones
         - @clients.each do |client|
           tr
-            td = client.name
-            td = client.surname
-            td = client.pets.count
-            td
-              button = link_to "Detalle", client_path(client.id)
-              button = link_to "Editar", edit_client_path(client.id)
-              button = link_to "Eliminar", client_path(client.id), data: {turbo_method: "delete", turbo_confirm: "Are you sure?" }
-    div
-      button = link_to "Añadir cliente", new_client_path
+            td.border.border-slate-300.text-sm = client.name
+            td.border.border-slate-300 = client.surname
+            td.border.border-slate-300 = client.pets.count
+            td.border.border-slate-300
+              button.hover:underline = link_to "Detalle", client_path(client.id)
+              button.hover:underline  = link_to "Editar", edit_client_path(client.id)
+              button.hover:underline  = link_to "Eliminar", client_path(client.id), data: { turbo_method: "delete", turbo_confirm: "Are you sure?" }
   - else
     p No hay clientes dados de alta
+  div
+    button.rounded.p-1.mt-3.hover:bg-gray-300 = link_to "Añadir cliente", new_client_path
 
 
 

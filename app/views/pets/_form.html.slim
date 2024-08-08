@@ -1,9 +1,10 @@
-=simple_form_for @pet do |f|
-  =f.input :name
-  =f.input :animal_type
-  =f.input :breed
-  =f.input :age
-  =f.input :chip_number
-  =f.collection_select :client_id, Client.all, :id, :name, include_blank: 'Seleccione', select: @pet.client_id
-  div
-    =f.submit 'Guardar mascota'
+=simple_form_for @pet, defaults: { input_html: { class: 'rounded flex flex-col mt-2' }, label_html:{class:"hidden"} } do |f|
+  =f.input :name, placeholder: "Nombre de la mascota"
+  =f.input :animal_type, placeholder: "Tipo de mascota"
+  =f.input :breed, placeholder: "Raza del animal"
+  =f.input :age, placeholder: "Edad"
+  =f.input :chip_number, placeholder:"Numero de chip"
+  =f.input :client_id, collection: Client.all
+
+  div.flex.justify-center
+    =f.submit 'Guardar mascota', class:"rounded p-1 mt-3 hover:bg-gray-300"

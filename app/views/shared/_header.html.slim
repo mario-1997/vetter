@@ -1,13 +1,21 @@
 - if user_signed_in?
-  div.div-header
-    header
-      nav
-        ul
-          li = link_to "Clientes", clients_path
-          li = link_to "Mascotas", pets_path
-          li = link_to "Tratamientos", treatments_path
-          li = link_to "Tratamientos aplicados", treatment_pets_path
+  header.p-2.flex.flex.items-center.justify-between data-controller="menu"
+    div.hidden.sm:block
+      = render 'shared/items_header'
+    div.hidden.sm:block
+      p = current_user.email if current_user
+      p = image_tag 'icons/user.svg', width: 20, height: 20
+      button.rounded.hover:bg-gray-100.p-1 = link_to "Cerrar sesión", destroy_user_session_path, data: { turbo_method: "delete", turbo_confirm: "Vas a cerrar sesion" }
 
-    div
-      = current_user.email if current_user
-      button = link_to "Cerrar sesion", destroy_user_session_path, data: {turbo_method: "delete", turbo_confirm: "Vas a cerrar sesion"}
+    div.block.sm:hidden.flex.justify-between.w-full
+      button data-action="click->menu#open" = image_tag 'icons/menu.svg', width: 35, height: 35
+      p DEMO veterinaria
+      button.rounded.hover:bg-gray-100.p-1 = link_to "Cerrar sesión", destroy_user_session_path, data: { turbo_method: "delete", turbo_confirm: "Vas a cerrar sesion" }
+      div.absolute.bg-white.top-0.right-0.shadow.z-10.h-full.flex.flex-col.easy-in-out.duration-200.p-5.w-1/3.translate-x-full data-menu-target='items'
+        button.mb-4 data-action="click->menu#close" = image_tag 'icons/close.svg', width: 35, height: 35
+        = render 'shared/items_header'
+
+
+  hr
+
+

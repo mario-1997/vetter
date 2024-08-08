@@ -1,19 +1,20 @@
-- if @treatments.any?
-  h2 Listado de tratamientos
-  div
-    table
-      tr
-        th tratamiento
-        th Precio
-        th Acciones
-      - @treatments.each do |treatment|
+div.flex.justify-center.flex-col.items-center.bg-gray-100.p-5
+  - if @treatments.any?
+    div
+      table.border-collapse.border.border-slate-400.text-center
+        caption Listado de tratamientos
         tr
-          td = treatment.name
-          td = treatment.price
-          td
-            button = link_to "editar", edit_treatment_path(treatment.id)
-- else
-  p No hay Tratamientos todavia
+          th.border.border-slate-300 tratamiento
+          th.border.border-slate-300 Precio
+          th.border.border-slate-300 Acciones
+        - @treatments.each do |treatment|
+          tr
+            td.border.border-slate-300 = treatment.name
+            td.border.border-slate-300 = treatment.price
+            td.border.border-slate-300
+              button.hover:underline  = link_to "editar", edit_treatment_path(treatment.id)
+  - else
+    p No hay Tratamientos todavia
 
-div
-  button = link_to "Añadir tratamiento", new_treatment_path
+  div
+    button.rounded.p-1.mt-3.hover:bg-gray-300 = link_to "Añadir tratamiento", new_treatment_path

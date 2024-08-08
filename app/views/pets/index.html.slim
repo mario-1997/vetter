@@ -1,23 +1,28 @@
-div
-  h1 Listado de mascotas
-
--if @pets.any?
-  div
-    table
-      tr
-        th Nombre
-        th Dueño
-        th Acciones
-      - @pets.each do |pet|
+div.flex.justify-center.flex-col.items-center.bg-gray-100.p-5
+  -if @pets.any?
+    div
+      table.border-collapse.border.border-slate-400.text-center
+        caption Listado de Mascotas
         tr
-          td = pet.name
-          td = pet.client.name
-          td
-            button = link_to "Detalle", pet_path(pet.id)
-            button = link_to "Editar", edit_pet_path(pet.id)
-            button = link_to "Eliminar", pet_path(pet.id), data: { turbo_method: "delete", turbo_confirm: "Are you sure?" }
-
+          th.border.border-slate-300 Nombre
+          th.border.border-slate-300 Dueño
+          th.border.border-slate-300 Acciones
+        - @pets.each do |pet|
+          tr
+            td.border.border-slate-300 = pet.name
+            td.border.border-slate-300 = pet.client.name
+            td.border.border-slate-300
+              button.hover:underline  = link_to "Detalle", pet_path(pet.id)
+              button.hover:underline  = link_to "Editar", edit_pet_path(pet.id)
+              button.hover:underline  = link_to "Eliminar", pet_path(pet.id), data: { turbo_method: "delete", turbo_confirm: "Are you sure?" }
+  -else
+    p No hay mascotas dadas de alta
   div
-    button = link_to "Añadir mascota", new_pet_path
--else
-  p No hay mascotas dadas de alta
+    button#abc.rounded.p-1.mt-3.hover:bg-gray-300 = link_to "Añadir mascota", new_pet_path
+
+
+  javascript:
+    const abc = document.getElementById('abc')
+    abc.addEventListener('click', () => {
+       alert('hola')
+    })

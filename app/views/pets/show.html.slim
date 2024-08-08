@@ -1,15 +1,28 @@
-div
-  h2 Detalle de #{@pet.name}
+div.bg-gray-100.p-5
+  div
+    h2.mb-2.underline Detalle de Mascota
 
-div
-  ul
-    li Nombre: #{@pet.name}
-    li Tipo: #{@pet.animal_type}
-    li Raza: #{@pet.breed}
-    li Edad: #{@pet.age}
-    li Numero de chip: #{@pet.chip_number}
-    li Alta: #{@pet.created_at}
-    li Ultima edicion: #{@pet.updated_at}
-    li Dueño: #{@pet.client.name}
-div
-  button = link_to "Volver", "/pets"
+  div
+    div.pb-2
+      p.font-bold Nombre:
+      p.text-slate-400 = @pet.name
+    div.pb-2
+      p.font-bold Tipo:
+      p.text-slate-400 = @pet.animal_type
+    div.pb-2
+      p.font-bold Raza:
+      p.text-slate-400 = @pet.breed
+    div.pb-2
+      p.font-bold Edad:
+      p.text-slate-400 = @pet.age
+    div.pb-2
+      p.font-bold Nº chip:
+      p.text-slate-400 = @pet.chip_number
+    div.pb-2
+      p.font-bold Alta
+      p.text-slate-400 = @pet.created_at
+    div.pb-2
+      p.font-bold Última modificación
+      p.text-slate-400 = @pet.updated_at
+  div
+    button.rounded.p-1.mt-3.hover:bg-gray-300 = link_to "Volver", "/clients"
